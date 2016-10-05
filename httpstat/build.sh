@@ -3,7 +3,8 @@
 # system update/install
 apk add --no-cache --update --virtual .build-deps \
 	go \
-	git
+	git \
+	ca-certificates
 
 # build
 go get -u github.com/davecheney/httpstat
