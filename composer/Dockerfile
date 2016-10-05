@@ -5,7 +5,7 @@
 # 	-v $(PWD):/srv \
 # 	dguyon/composer [COMMAND] [ARG...]
 #
-FROM alpine:latest
+FROM php:7.0-alpine
 MAINTAINER David Guyon <dguyon@gmail.com>
 
 ENV COMPOSER_NO_INTERACTION 1
@@ -16,4 +16,4 @@ RUN build.sh
 VOLUME ["/srv"]
 WORKDIR /srv
 
-ENTRYPOINT ["composer"]
+ENTRYPOINT ["composer", "--ansi"]
