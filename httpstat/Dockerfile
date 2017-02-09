@@ -2,7 +2,7 @@
 # in a Docker container
 #
 # Usage: docker run --rm -it \
-# 	dguyon/httpstat [ARG...]
+# 	gyndav/httpstat [ARG...]
 #
 FROM golang:1.7-alpine
 MAINTAINER David Guyon <dguyon@gmail.com>
