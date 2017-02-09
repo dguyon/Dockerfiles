@@ -3,9 +3,9 @@
 #
 # Usage: docker run --rm -it \
 # 	-v $(PWD):/srv \
-# 	dguyon/composer [COMMAND] [ARG...]
+# 	gyndav/composer [COMMAND] [ARG...]
 #
-FROM php:7.0-alpine
+FROM php:7.1-alpine
 MAINTAINER David Guyon <dguyon@gmail.com>
 
 ENV COMPOSER_NO_INTERACTION 1
