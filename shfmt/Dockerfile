@@ -4,7 +4,7 @@
 # Usage: docker run --rm -it \
 # 	gyndav/shfmt [ARG...] [FILE]
 #
-FROM golang:1.7-alpine
+FROM golang:1.8-alpine
 MAINTAINER David Guyon <dguyon@gmail.com>
 
 # init

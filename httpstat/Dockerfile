@@ -4,7 +4,7 @@
 # Usage: docker run --rm -it \
 # 	gyndav/httpstat [ARG...]
 #
-FROM golang:1.7-alpine
+FROM golang:1.8-alpine
 MAINTAINER David Guyon <dguyon@gmail.com>
 
 ENV PATH /go/bin:/usr/local/go/bin:$PATH
