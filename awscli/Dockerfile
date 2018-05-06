@@ -12,12 +12,12 @@ FROM alpine:3.7
 LABEL maintainer "David Guyon <dguyon@gmail.com>"
 
 ARG AWSCLI_VERSION
-ENV RUN_DEPS "ca-certificates groff less python"
+ENV RUN_DEPS "ca-certificates groff less python dumb-init"
 ENV BUILD_DEPS "py2-pip"
 
-RUN apk add --update --no-cache \
-    "$RUN_DEPS" \
-    "$BUILD_DEPS" \
+RUN apk add --no-cache \
+    $RUN_DEPS \
+    $BUILD_DEPS \
     && pip install "awscli==$AWSCLI_VERSION" \
     && apk --purge del "$BUILD_DEPS" \
     && mkdir -p /root/.aws \
@@ -28,4 +28,4 @@ RUN apk add --update --no-cache \
 
 VOLUME /aws-data
 WORKDIR /aws-data
-ENTRYPOINT [ "aws" ]
+ENTRYPOINT ["/usr/bin/dumb-init", "--", "aws"]
